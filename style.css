@@ -28,13 +28,11 @@ body {
 
 .card {
     box-shadow: inset 0px 0px 20px 1px #0d0d0d;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.2);
-    transition: 0.5s ease;
-    /*background-size: contain !important;
-    background-repeat: no-repeat !important;*/
+    transform: scale(1.03);
 }
 
 
@@ -201,15 +199,14 @@ nav svg {
 }
 
 #owner-image {
-    background: url(Images/papa.jpeg);
-    background-position: top;
-    background-size: cover;
+    background: url(Images/Projects/5.jpg);
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
 
     height: 45rem;
     width: 100%;
-
-    max-width: 30rem;
+    max-width: 100%;
 
     box-shadow: inset 0px 0px 20px 1px #0d0d0d;
 }
@@ -230,14 +227,13 @@ nav svg {
 }
 
 #projects-container {
-    
     display: grid;
-    gap: 1rem;
+    gap: 0.8rem;
 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 200px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-auto-rows: 180px;
 
-    padding: 5rem 1rem;
+    padding: 5rem 0.8rem;
 }
 
 
@@ -250,21 +246,17 @@ nav svg {
 
 
 
-@media only screen and (min-width: 2080px) {
-    /* Projects Section */
-
+@media only screen and (min-width: 1050px) and (max-width: 2079px) {
     #projects-container {
-        grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
-        grid-auto-rows: 500px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-auto-rows: 280px;
     }
 }
 
-@media only screen and (min-width: 1050px) and (max-width: 2079px) {
-    /* Projects Section */
-
+@media only screen and (min-width: 2080px) {
     #projects-container {
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        grid-auto-rows: 300px;
+        grid-auto-rows: 400px;
     }
 }
 
@@ -308,5 +300,11 @@ nav svg {
     #hero-text-sub {
         font-size: 2.4rem;
         padding-bottom: 5vh;
+    }
+}
+
+@media (hover: none) {
+    .card:hover {
+        transform: none;
     }
 }
