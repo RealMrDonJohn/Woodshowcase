@@ -6,6 +6,35 @@
     <link rel="stylesheet" href="style.css">
     <title>Holzportfolio</title>
 </head>
+
+<div id="image-modal">
+    <span id="close-modal">&times;</span>
+    <img id="modal-image" src="" alt="">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-image');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const bg = window.getComputedStyle(card).backgroundImage;
+            const imgUrl = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+            modalImg.src = imgUrl;
+            modal.style.display = 'flex';
+        });
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target !== modalImg) {
+            modal.style.display = 'none';
+        }
+    });
+});
+</script>
+
 <body>
     <nav>
         <input type="checkbox" id="sidebar-active">

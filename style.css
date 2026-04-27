@@ -141,6 +141,8 @@ nav svg {
 
 #hero-text-main {
     font-size: 3rem;
+    text-align: center;
+    width: 100%;
 }
 
 #hero-text-sub {
@@ -307,4 +309,37 @@ nav svg {
     .card:hover {
         transform: none;
     }
+}
+
+
+.card {
+    cursor: pointer;
+}
+
+#image-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#modal-image {
+    max-width: 95%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+#close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
 }
